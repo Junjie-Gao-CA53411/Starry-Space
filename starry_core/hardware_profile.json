@@ -1,0 +1,136 @@
+{
+  "version": "1.0.0",
+  "timestamp": "2026-06-28T14:44:39.026575",
+  "os_name": "Windows",
+  "os_version": "10.0.26200",
+  "os_release": "11",
+  "hostname": "Rhea_Corolas",
+  "architecture": "amd64",
+  "cpu": {
+    "brand": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "physical_cores": 16,
+    "logical_cores": 16,
+    "frequency_mhz": null,
+    "architecture": "amd64",
+    "flags": [],
+    "supports_avx2": false,
+    "supports_avx512": false,
+    "is_apple_silicon": false
+  },
+  "memory": {
+    "total_gb": 31.5,
+    "available_gb": 14.82,
+    "percent_used": 52.9,
+    "swap_total_gb": 32.0,
+    "swap_used_gb": 3.6,
+    "type": null
+  },
+  "gpus": [
+    {
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "vendor": "NVIDIA",
+      "vram_mb": 8151,
+      "vram_gb": 7.96,
+      "driver_version": "591.74",
+      "pci_id": null,
+      "is_integrated": false,
+      "is_dedicated": true,
+      "is_display_adapter": false,
+      "compute_capability": "12.0",
+      "backends": [
+        "cuda",
+        "vulkan"
+      ]
+    }
+  ],
+  "disks": [
+    {
+      "device": "C:\\",
+      "mountpoint": "C:\\",
+      "filesystem": "NTFS",
+      "total_gb": 300.0,
+      "used_gb": 249.03,
+      "free_gb": 50.97,
+      "percent_used": 83.0,
+      "is_ssd": true
+    },
+    {
+      "device": "D:\\",
+      "mountpoint": "D:\\",
+      "filesystem": "NTFS",
+      "total_gb": 626.66,
+      "used_gb": 501.88,
+      "free_gb": 124.77,
+      "percent_used": 80.1,
+      "is_ssd": true
+    },
+    {
+      "device": "F:\\",
+      "mountpoint": "F:\\",
+      "filesystem": "exFAT",
+      "total_gb": 56.69,
+      "used_gb": 18.08,
+      "free_gb": 38.61,
+      "percent_used": 31.9,
+      "is_ssd": false
+    },
+    {
+      "device": "K:\\",
+      "mountpoint": "K:\\",
+      "filesystem": "NTFS",
+      "total_gb": 45.95,
+      "used_gb": 0.14,
+      "free_gb": 45.81,
+      "percent_used": 0.3,
+      "is_ssd": false
+    },
+    {
+      "device": "R:\\",
+      "mountpoint": "R:\\",
+      "filesystem": "exFAT",
+      "total_gb": 779.99,
+      "used_gb": 177.02,
+      "free_gb": 602.96,
+      "percent_used": 22.7,
+      "is_ssd": false
+    },
+    {
+      "device": "T:\\",
+      "mountpoint": "T:\\",
+      "filesystem": "exFAT",
+      "total_gb": 1023.99,
+      "used_gb": 217.56,
+      "free_gb": 806.43,
+      "percent_used": 21.2,
+      "is_ssd": false
+    }
+  ],
+  "battery": {
+    "percent": 100,
+    "is_plugged": true,
+    "secs_left": -2
+  },
+  "ai_backends": [
+    "cpu",
+    "cuda",
+    "vulkan"
+  ],
+  "ollama": {
+    "model_size": "14B",
+    "gpu_layers": 999,
+    "use_gpu": true,
+    "context_length": 8192,
+    "num_threads": 14,
+    "backend": "cuda",
+    "quantization": "Q4_K_M",
+    "notes": [
+      "NVIDIA: NVIDIA GeForce RTX 5070 Laptop GPU (7.96GB)",
+      "Compute Capability: 12.0"
+    ],
+    "env_vars": {
+      "OLLAMA_GPU_OVERHEAD": "1",
+      "OLLAMA_NUM_THREADS": "14",
+      "OLLAMA_CONTEXT_LENGTH": "8192"
+    }
+  }
+}

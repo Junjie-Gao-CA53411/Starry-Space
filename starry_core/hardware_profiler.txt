@@ -1,0 +1,73 @@
+1. 使用方式：
+
+# 标准检测
+python hardware_profiler.py
+
+# 详细日志（调试用）
+python hardware_profiler.py -v
+
+# 仅输出环境变量（供脚本调用）
+python hardware_profiler.py --env
+
+# 自定义输出路径
+python hardware_profiler.py -o /path/to/profile.json
+
+
+2. 集成到Portable Starry
+
+# 启动器伪代码
+import subprocess
+import json
+
+# 1. 运行硬件检测
+subprocess.run(["python", "hardware_profiler.py", "-o", "data/profile.json"])
+
+# 2. 读取配置
+with open("data/profile.json") as f:
+    profile = json.load(f)
+
+# 3. 自动配置 Ollama
+ollama_cfg = profile["ollama"]
+for key, val in ollama_cfg["env_vars"].items():
+    os.environ[key] = val
+
+# 4. 启动 Ollama
+subprocess.Popen(["ollama", "serve"])
+
+# 5. 推荐用户下载模型
+print(f"💡 推荐下载: ollama pull qwen2.5:{ollama_cfg['model_size']}")
+
+
+3. 开源发布建议：
+
+# Portable Starry Hardware Profiler
+
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+跨平台硬件自动检测与 AI 推理配置推荐引擎。
+
+## 支持平台
+
+| OS | Architecture | GPU Backends |
+|----|-------------|--------------|
+| Windows 10/11 | x86_64, ARM64 | CUDA, Vulkan, DirectML |
+| macOS 12+ | x86_64, ARM64 | Metal, MPS, MLX |
+| Linux | x86_64, ARM64 | CUDA, ROCm, Vulkan |
+
+## 快速开始
+
+```bash
+pip install psutil
+python hardware_profiler.py
+
+
+4. 集成到项目：
+from hardware_profiler import HardwareProfiler
+
+profiler = HardwareProfiler()
+profile = profiler.profile()
+
+# 自动配置 Ollama
+for k, v in profile.ollama.env_vars.items():
+    os.environ[k] = v
